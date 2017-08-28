@@ -22,12 +22,12 @@ public class SplashActivity extends Activity {
         
         //旋转动画
         RotateAnimation animRotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        animRotate.setDuration(1000);
+        animRotate.setDuration(2000);
         animRotate.setFillAfter(true);
         
         //缩放动画
         ScaleAnimation animScale = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        animScale.setDuration(1000);
+        animScale.setDuration(2000);
         animScale.setFillAfter(true);
         
         //渐变动画
