@@ -61,23 +61,30 @@ public final class R {
         public static final int progress_dialog_bg=0x7f020025;
         public static final int setting=0x7f020026;
         public static final int setting_press=0x7f020027;
-        public static final int smartservice=0x7f020028;
-        public static final int smartservice_press=0x7f020029;
-        public static final int splash_bg_newyear=0x7f02002a;
-        public static final int splash_horse_newyear=0x7f02002b;
-        public static final int title_red_bg=0x7f02002c;
-        public static final int topic_title_arr=0x7f02002d;
-        public static final int topnews_item_default=0x7f02002e;
-        public static final int xsearch_loading=0x7f02002f;
-        public static final int xsearch_msg_pull_arrow_down=0x7f020030;
+        public static final int shape_point_gray=0x7f020028;
+        public static final int smartservice=0x7f020029;
+        public static final int smartservice_press=0x7f02002a;
+        public static final int splash_bg_newyear=0x7f02002b;
+        public static final int splash_horse_newyear=0x7f02002c;
+        public static final int title_red_bg=0x7f02002d;
+        public static final int topic_title_arr=0x7f02002e;
+        public static final int topnews_item_default=0x7f02002f;
+        public static final int xsearch_loading=0x7f020030;
+        public static final int xsearch_msg_pull_arrow_down=0x7f020031;
     }
     public static final class id {
-        public static final int action_settings=0x7f080002;
-        public static final int imageView1=0x7f080001;
-        public static final int rl_root=0x7f080000;
+        public static final int action_settings=0x7f080006;
+        public static final int btn_start=0x7f080001;
+        public static final int imageView1=0x7f080005;
+        public static final int ll_container=0x7f080002;
+        public static final int rl_root=0x7f080004;
+        public static final int textView1=0x7f080003;
+        public static final int vp_guide=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_splash=0x7f030000;
+        public static final int activity_guide=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_splash=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;

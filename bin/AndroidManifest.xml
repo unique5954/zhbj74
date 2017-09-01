@@ -23,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.itheima.zhbj74.GuideActivity" />
+        <activity android:name="com.itheima.zhbj74.MainActivity" />
+            
     </application>
 
 </manifest>
