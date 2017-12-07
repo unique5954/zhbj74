@@ -48,6 +48,11 @@ public class GuideActivity extends Activity {
 			ImageView point = new ImageView(this);
 			//设置图片(shape形状)不通过设置背景填充布局，只根据实际大小显示
 			point.setImageResource(R.drawable.shape_point_gray);
+			
+			if(i>0){
+				//设置左边距
+			}
+			
 			//给线性布局容器添加圆点
 			llContainer.addView(point);
 		}
