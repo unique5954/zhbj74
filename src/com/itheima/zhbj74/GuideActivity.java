@@ -2,18 +2,24 @@ package com.itheima.zhbj74;
 
 import java.util.ArrayList;
 
+import com.itheima.zhbj74.utils.PrefUtils;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.RelativeLayout;
 //新手引导页面
 public class GuideActivity extends Activity {
 
@@ -21,6 +27,7 @@ public class GuideActivity extends Activity {
 	private LinearLayout llContainer;
 	private ImageView ivRedPoint;//小红点
 	private int mPointDis;//小红点移动距离
+	private Button btnStart;
 	
 	//引导页图片id数组
 	private int[] mImageIds = new int[]{R.drawable.guide_1,R.drawable.guide_2,R.drawable.guide_3};
@@ -36,29 +43,40 @@ public class GuideActivity extends Activity {
 		mViewPager = (ViewPager) findViewById(R.id.vp_guide);
 		llContainer = (LinearLayout) findViewById(R.id.ll_container);
 		ivRedPoint = (ImageView) findViewById(R.id.iv_red_point);
+		btnStart = (Button) findViewById(R.id.btn_start);
 		
 		initData();//初始化ImageView数据
 		mViewPager.setAdapter(new GuideAdapter());
 		
 		mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
 			
+			//某个页面被选中回调
 			@Override
 			public void onPageSelected(int position) {
-				//某个页面被选中回调
+				//滑到最后一个页面，显示开始按钮
+				if(position == mImageViewList.size()-1){
+					btnStart.setVisibility(View.VISIBLE);
+				}else{
+					btnStart.setVisibility(View.INVISIBLE);
+				}
 			}
 			
+			//当页面滑动过程中的回调
 			@Override
 			public void onPageScrolled(int position, float positionOffset,
 					int positionOffsetPixels) {
-				//当页面滑动过程中的回调
 				//position：当前位置，positionOffset：滑动偏移百分比
 				//更新小红点的距离
-				int dis = (int) (mPointDis * positionOffset);
+				int leftMargin = (int) (mPointDis * positionOffset) + mPointDis * position;
+				//设置左边距参数
+				RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) ivRedPoint.getLayoutParams();
+				params.leftMargin = leftMargin;
+				ivRedPoint.setLayoutParams(params);
 			}
 			
+			//页面状态发生变化回调
 			@Override
 			public void onPageScrollStateChanged(int state) {
-				//页面状态发生变化回调
 			}
 		});
 		
@@ -80,6 +98,17 @@ public class GuideActivity extends Activity {
 			}
 		});
 		
+		btnStart.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//更新SharedPreferences,不是第一次进入程序
+				PrefUtils.setBoolean(getApplicationContext(), "is_first_enter", false);
+				//跳到主页面
+				startActivity(new Intent(getApplicationContext(), MainActivity.class));
+				finish();
+			}
+		});
 	}
 	
 	//初始化数据

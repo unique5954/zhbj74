@@ -15,7 +15,12 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
-        android:text=" 开始体验" />
+        android:background="@drawable/btn_guide_selector"
+        android:text="开始体验"
+        android:textColor="@color/text_guide_selector"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="invisible" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
