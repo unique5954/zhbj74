@@ -51,7 +51,9 @@ public class GuideActivity extends Activity {
 			public void onPageScrolled(int position, float positionOffset,
 					int positionOffsetPixels) {
 				//当页面滑动过程中的回调
+				//position：当前位置，positionOffset：滑动偏移百分比
 				//更新小红点的距离
+				int dis = (int) (mPointDis * positionOffset);
 			}
 			
 			@Override
@@ -62,6 +64,7 @@ public class GuideActivity extends Activity {
 		
 		//计算两个圆点距离
 		//小红点移动距离=第二个圆点left值-第一个圆点left值
+		//(activity的onCreate方法执行结束之后才会走此流程)measure->layout(位置)->draw
         //mPointDis = llContainer.getChildAt(1).getLeft() - llContainer.getChildAt(0).getLeft();
 		//监听layout方法结束的事件,位置确定好之后，才能取圆点距离
 		//视图树
