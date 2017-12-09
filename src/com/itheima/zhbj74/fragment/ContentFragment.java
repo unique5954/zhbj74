@@ -10,6 +10,7 @@ import com.itheima.zhbj74.base.impl.SettingPager;
 import com.itheima.zhbj74.base.impl.SmartServicePager;
 import com.itheima.zhbj74.view.NoScrollViewPager;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
@@ -41,6 +42,7 @@ public class ContentFragment extends BaseFragment{
 		mPagers.add(new SettingPager(mActivity));
 		
 		mViewPager.setAdapter(new ContentAdapter());
+		
 		//底栏标签切换监听
 		rgGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
@@ -73,6 +75,26 @@ public class ContentFragment extends BaseFragment{
 				}
 			}
 		});
+		
+		//监听页面切换
+		mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int position) {
+				BasePager pager = mPagers.get(position);
+				pager.initData();//初始化页面数据
+			}
+			
+			@Override
+			public void onPageScrolled(int position, float positionOffset,
+					int positionOffsetPixels) {
+			}
+			@Override
+			public void onPageScrollStateChanged(int state) {
+			}
+		});
+		//第一次进入，加载首页
+		mPagers.get(0).initData();
 	}
 
 	class ContentAdapter extends PagerAdapter{
@@ -91,7 +113,8 @@ public class ContentFragment extends BaseFragment{
 		public Object instantiateItem(ViewGroup container, int position) {
 			BasePager pager = mPagers.get(position);
 			View view = pager.mRootView;//获取当前页面对象的布局
-			pager.initData();
+//			//初始化数据,viewpager会默认加载下一个界面,为了节省性能和流量，不在此次处调用
+//			pager.initData();
 			container.addView(view);
 			return view;
 		}
