@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment{
 	
-	public Activity mActivity;
+	public Activity mActivity;//就是MainActivity
 
 	//fragment创建
 	@Override

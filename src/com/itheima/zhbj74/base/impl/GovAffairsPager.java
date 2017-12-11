@@ -3,6 +3,7 @@ package com.itheima.zhbj74.base.impl;
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.itheima.zhbj74.base.BasePager;
@@ -30,6 +31,9 @@ public class GovAffairsPager extends BasePager{
 		
 		//修改页面标题
 		tvTitle.setText("政务");
+		
+		//显示菜单按钮
+		btnMenu.setVisibility(View.VISIBLE);
 	}
 
 }

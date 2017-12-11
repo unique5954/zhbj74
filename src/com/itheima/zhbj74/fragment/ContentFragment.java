@@ -1,6 +1,8 @@
 package com.itheima.zhbj74.fragment;
 
 import java.util.ArrayList;
+
+import com.itheima.zhbj74.MainActivity;
 import com.itheima.zhbj74.R;
 import com.itheima.zhbj74.base.BasePager;
 import com.itheima.zhbj74.base.impl.GovAffairsPager;
@@ -9,6 +11,8 @@ import com.itheima.zhbj74.base.impl.NewsCenterPager;
 import com.itheima.zhbj74.base.impl.SettingPager;
 import com.itheima.zhbj74.base.impl.SmartServicePager;
 import com.itheima.zhbj74.view.NoScrollViewPager;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
@@ -83,8 +87,17 @@ public class ContentFragment extends BaseFragment{
 			public void onPageSelected(int position) {
 				BasePager pager = mPagers.get(position);
 				pager.initData();//初始化页面数据
+				
+				if(position ==0 || position == mPagers.size()-1){
+					//首页、设置页禁用侧边栏
+					setSlidingMenuEnable(false);
+				}else{
+					//其他页开启侧边栏
+					setSlidingMenuEnable(true);
+				}
 			}
 			
+
 			@Override
 			public void onPageScrolled(int position, float positionOffset,
 					int positionOffsetPixels) {
@@ -95,6 +108,23 @@ public class ContentFragment extends BaseFragment{
 		});
 		//第一次进入，加载首页
 		mPagers.get(0).initData();
+		//禁用侧边栏
+		setSlidingMenuEnable(false);
+	}
+
+	/**
+	 * 开启或禁用侧边栏
+	 * @param enable
+	 */
+	protected void setSlidingMenuEnable(boolean enable) {
+		//获取侧边栏对象
+		MainActivity  mainUI = (MainActivity) mActivity; 
+		SlidingMenu slidingMenu = mainUI.getSlidingMenu();
+		if(enable){
+			slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		}else{
+			slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+		}
 	}
 
 	class ContentAdapter extends PagerAdapter{
