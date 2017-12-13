@@ -10,10 +10,10 @@
         android:id="@+id/tv_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/menu_arr_normal"
-        android:drawablePadding="3dp"
+        android:drawableLeft="@drawable/btn_menu_selector"
+        android:drawablePadding="5dp"
         android:padding="10dp"
-        android:textColor="#fff"
-        android:textSize="22sp" />
+        android:textColor="@color/txt_menu_selector"
+        android:textSize="23sp" />
 
 </LinearLayout>

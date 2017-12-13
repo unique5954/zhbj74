@@ -52,6 +52,7 @@ public class NewsCenterPager extends BasePager{
 		String cache = CacheUtils.getCache(GlobalConstants.CATEGORY_URL, mActivity);
 		if(!TextUtils.isEmpty(cache)){
 			//有缓存,解析数据
+			System.out.println("有缓存,解析数据...");
 			processData(cache);
 		}
 		
@@ -74,6 +75,7 @@ public class NewsCenterPager extends BasePager{
 			public void onSuccess(ResponseInfo<String> responseInfo) {
 				//请求成功
 				String result = responseInfo.result;//获取服务器返回结果
+				System.out.println("获取服务器返回结果...");
 				processData(result);
 				//缓存数据
 				CacheUtils.setCache(GlobalConstants.CATEGORY_URL, result, mActivity);

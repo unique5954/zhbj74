@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Window;
+import android.view.WindowManager;
 //Ö÷Ò³Ãæ
 public class MainActivity extends SlidingFragmentActivity {
 	private static final String TAG_LEFT_MENU = "TAG_LEFT_MENU";
@@ -26,8 +27,10 @@ public class MainActivity extends SlidingFragmentActivity {
         SlidingMenu slidingMenu = getSlidingMenu();
         //ÉèÖÃÈ«ÆÁ´¥ÃşÏÔÊ¾²à±ßÀ¸
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        //ÉèÖÃÆÁÄ»Ô¤Áô200px¿í¶È
-        slidingMenu.setBehindOffset(200);
+        //ÉèÖÃÆÁÄ»Ô¤Áô¿í¶È
+        WindowManager wm = this.getWindowManager();
+        int width = wm.getDefaultDisplay().getWidth();
+        slidingMenu.setBehindOffset(width*3/5);
         
         initFragment();
 	}
