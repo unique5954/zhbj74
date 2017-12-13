@@ -76,8 +76,8 @@ int drawable topic_title_arr 0x7f020038
 int drawable topnews_item_default 0x7f020039
 int drawable xsearch_loading 0x7f02003a
 int drawable xsearch_msg_pull_arrow_down 0x7f02003b
-int id action_settings 0x7f04001a
-int id btn_menu 0x7f040019
+int id action_settings 0x7f04001c
+int id btn_menu 0x7f04001b
 int id btn_start 0x7f040007
 int id fl_content 0x7f04000d
 int id fl_left_menu 0x7f040016
@@ -87,6 +87,7 @@ int id imageView1 0x7f04000c
 int id iv_red_point 0x7f040009
 int id left 0x7f040000
 int id ll_container 0x7f040008
+int id lv_list 0x7f040017
 int id margin 0x7f040002
 int id none 0x7f040004
 int id rb_gov 0x7f040013
@@ -98,9 +99,10 @@ int id rg_group 0x7f04000f
 int id right 0x7f040001
 int id rl_root 0x7f04000b
 int id selected_view 0x7f040005
-int id slidingmenumain 0x7f040017
+int id slidingmenumain 0x7f040019
 int id textView1 0x7f040015
-int id tv_title 0x7f040018
+int id tv_menu 0x7f040018
+int id tv_title 0x7f04001a
 int id vp_content 0x7f04000e
 int id vp_guide 0x7f040006
 int layout activity_guide 0x7f030000
@@ -110,8 +112,9 @@ int layout base_pager 0x7f030003
 int layout fragment_content 0x7f030004
 int layout fragment_left_menu 0x7f030005
 int layout left_menu 0x7f030006
-int layout slidingmenumain 0x7f030007
-int layout title_bar 0x7f030008
+int layout list_item_left_menu 0x7f030007
+int layout slidingmenumain 0x7f030008
+int layout title_bar 0x7f030009
 int menu main 0x7f090000
 int string action_settings 0x7f060001
 int string app_name 0x7f060000

@@ -2,13 +2,19 @@ package com.itheima.zhbj74.base.impl;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.itheima.zhbj74.MainActivity;
 import com.itheima.zhbj74.base.BasePager;
+import com.itheima.zhbj74.domain.NewsMenu;
+import com.itheima.zhbj74.fragment.LeftMenuFragment;
 import com.itheima.zhbj74.global.GlobalConstants;
+import com.itheima.zhbj74.utils.CacheUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
@@ -42,12 +48,19 @@ public class NewsCenterPager extends BasePager{
 		//显示菜单按钮
 		btnMenu.setVisibility(View.VISIBLE);
 		
+		//先判断有没有缓存
+		String cache = CacheUtils.getCache(GlobalConstants.CATEGORY_URL, mActivity);
+		if(!TextUtils.isEmpty(cache)){
+			//有缓存,解析数据
+			processData(cache);
+		}
+		
 		//请求服务器，获取数据
-		//开源框架XUtils
 		getDataFromServer();
+		
 	}
 
-	//从服务器获取数据
+	//从服务器获取数据,开源框架XUtils
 	private void getDataFromServer() {
 		/*
 		 * 需要有以下权限:
@@ -61,7 +74,9 @@ public class NewsCenterPager extends BasePager{
 			public void onSuccess(ResponseInfo<String> responseInfo) {
 				//请求成功
 				String result = responseInfo.result;//获取服务器返回结果
-				System.out.println("服务器返回结果:" + result);
+				processData(result);
+				//缓存数据
+				CacheUtils.setCache(GlobalConstants.CATEGORY_URL, result, mActivity);
 			}
 
 			@Override
@@ -72,6 +87,20 @@ public class NewsCenterPager extends BasePager{
 			}
 		});
 		
+	}
+
+	/**
+	 * 解析数据
+	 */
+	protected void processData(String json) {
+		Gson gson = new Gson();
+		NewsMenu data = gson.fromJson(json, NewsMenu.class);
+		
+		//获取侧边栏对象
+		MainActivity mainUI = (MainActivity) mActivity;
+		LeftMenuFragment fragment = mainUI.getLeftMenuFragment();
+		//设置侧边栏数据
+		fragment.setMenuData(data.data);
 	}
 
 }

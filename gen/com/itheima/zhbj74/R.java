@@ -200,8 +200,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int xsearch_msg_pull_arrow_down=0x7f02003b;
     }
     public static final class id {
-        public static final int action_settings=0x7f04001a;
-        public static final int btn_menu=0x7f040019;
+        public static final int action_settings=0x7f04001c;
+        public static final int btn_menu=0x7f04001b;
         public static final int btn_start=0x7f040007;
         public static final int fl_content=0x7f04000d;
         public static final int fl_left_menu=0x7f040016;
@@ -211,6 +211,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int iv_red_point=0x7f040009;
         public static final int left=0x7f040000;
         public static final int ll_container=0x7f040008;
+        public static final int lv_list=0x7f040017;
         public static final int margin=0x7f040002;
         public static final int none=0x7f040004;
         public static final int rb_gov=0x7f040013;
@@ -222,9 +223,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int right=0x7f040001;
         public static final int rl_root=0x7f04000b;
         public static final int selected_view=0x7f040005;
-        public static final int slidingmenumain=0x7f040017;
+        public static final int slidingmenumain=0x7f040019;
         public static final int textView1=0x7f040015;
-        public static final int tv_title=0x7f040018;
+        public static final int tv_menu=0x7f040018;
+        public static final int tv_title=0x7f04001a;
         public static final int vp_content=0x7f04000e;
         public static final int vp_guide=0x7f040006;
     }
@@ -236,8 +238,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fragment_content=0x7f030004;
         public static final int fragment_left_menu=0x7f030005;
         public static final int left_menu=0x7f030006;
-        public static final int slidingmenumain=0x7f030007;
-        public static final int title_bar=0x7f030008;
+        public static final int list_item_left_menu=0x7f030007;
+        public static final int slidingmenumain=0x7f030008;
+        public static final int title_bar=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f090000;
