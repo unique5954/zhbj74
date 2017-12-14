@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.itheima.zhbj74.MainActivity;
 import com.itheima.zhbj74.R;
+import com.itheima.zhbj74.base.impl.NewsCenterPager;
 import com.itheima.zhbj74.domain.NewsMenu.NewsMenuData;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -38,6 +39,7 @@ public class LeftMenuFragment extends BaseFragment{
 
 	//设置侧边栏数据
 	public void setMenuData(ArrayList<NewsMenuData> data){
+		mCurrentPos=0;//当前选中位置归零,防止不同tab切换后显示内容与侧边栏选中不同
 		//更新页面
 		mNewsMenuData = data;
 		
@@ -56,10 +58,25 @@ public class LeftMenuFragment extends BaseFragment{
 				//收起侧边栏
 				toggle();
 				
+				//侧边栏点击后，给ContentFragment的标签页的FrameLayout(fl_content)的布局,添加布局
+				setCurrentDetailPager(position);
 			}
 		});
 	}
-	
+	/**
+	 * 设置当前详情页
+	 */
+	protected void setCurrentDetailPager(int position) {
+		// 获取新闻中心的对象
+		MainActivity mainUI = (MainActivity) mActivity;
+		//获取ContentFragment
+		ContentFragment fragment = mainUI.getContentFragment();
+		//获取NewsCenterPager
+		NewsCenterPager newsCenterPager = fragment.getNewsCenterPager();
+		//修改NewsCenterPager的FrameLayout的布局
+		newsCenterPager.setCurrentDetailPager(position);
+	}
+
 	/**
 	 * 开关侧边栏
 	 */
