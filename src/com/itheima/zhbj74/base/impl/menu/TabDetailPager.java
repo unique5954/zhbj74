@@ -23,6 +23,7 @@ import com.itheima.zhbj74.domain.NewsTabBean;
 import com.itheima.zhbj74.domain.NewsTabBean.TopNews;
 import com.itheima.zhbj74.global.GlobalConstants;
 import com.itheima.zhbj74.utils.CacheUtils;
+import com.itheima.zhbj74.view.TopNewsViewPager;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -39,7 +40,7 @@ public class TabDetailPager extends BaseMenuDetailPager{
 
 	private NewsTabData mTabData;//单个页签
 	private TextView view;
-	private ViewPager mViewPager;//头条新闻
+	private TopNewsViewPager mViewPager;//头条新闻
 	private String mUrl;
 	private ArrayList<TopNews> mTopNews;
 	
@@ -60,7 +61,7 @@ public class TabDetailPager extends BaseMenuDetailPager{
 //		return view;
 		
 		View view = View.inflate(mActivity, R.layout.pager_tab_detail, null);
-		mViewPager = (ViewPager) view.findViewById(R.id.vp_top_news);
+		mViewPager = (TopNewsViewPager) view.findViewById(R.id.vp_top_news);
 		return view;
 	}
 	
