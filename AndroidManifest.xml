@@ -27,7 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.itheima.zhbj74.GuideActivity" />
-        <activity android:name="com.itheima.zhbj74.MainActivity" />
+        <activity android:name="com.itheima.zhbj74.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults" />
             
     </application>
 

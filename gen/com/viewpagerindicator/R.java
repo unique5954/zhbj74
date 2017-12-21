@@ -84,6 +84,7 @@ public final class R {
 		public static final int default_title_indicator_top_padding = 0x7f08000c;
 	}
 	public static final class drawable {
+		public static final int news_tab_item_bg_select = 0x7f020023;
 		public static final int vpi__tab_indicator = 0x7f02003b;
 		public static final int vpi__tab_selected_focused_holo = 0x7f02003c;
 		public static final int vpi__tab_selected_holo = 0x7f02003d;

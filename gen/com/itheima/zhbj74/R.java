@@ -534,9 +534,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int xsearch_msg_pull_arrow_down=0x7f020043;
     }
     public static final class id {
-        public static final int action_settings=0x7f040021;
+        public static final int action_settings=0x7f040023;
         public static final int bottom=0x7f040003;
-        public static final int btn_menu=0x7f040020;
+        public static final int btn_menu=0x7f040022;
+        public static final int btn_next=0x7f04001d;
         public static final int btn_start=0x7f04000b;
         public static final int fl_content=0x7f040011;
         public static final int fl_left_menu=0x7f04001a;
@@ -559,15 +560,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int right=0x7f040006;
         public static final int rl_root=0x7f04000f;
         public static final int selected_view=0x7f040009;
-        public static final int slidingmenumain=0x7f04001e;
+        public static final int slidingmenumain=0x7f040020;
         public static final int top=0x7f040004;
         public static final int triangle=0x7f040001;
         public static final int tv_menu=0x7f04001b;
-        public static final int tv_title=0x7f04001f;
+        public static final int tv_title=0x7f040021;
         public static final int underline=0x7f040002;
         public static final int vp_content=0x7f040012;
         public static final int vp_guide=0x7f04000a;
-        public static final int vp_news_menu_detail=0x7f04001d;
+        public static final int vp_news_menu_detail=0x7f04001e;
+        public static final int vp_top_news=0x7f04001f;
     }
     public static final class integer {
         public static final int default_circle_indicator_orientation=0x7f070000;
@@ -586,8 +588,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int left_menu=0x7f030006;
         public static final int list_item_left_menu=0x7f030007;
         public static final int pager_news_menu_detail=0x7f030008;
-        public static final int slidingmenumain=0x7f030009;
-        public static final int title_bar=0x7f03000a;
+        public static final int pager_tab_detail=0x7f030009;
+        public static final int slidingmenumain=0x7f03000a;
+        public static final int title_bar=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
